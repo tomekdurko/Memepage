@@ -27,6 +27,7 @@ public class MemeService {
 
         input.setData(LocalDateTime.now());
         String nowyUrl=input.getAutor() + input.getName();
+        nowyUrl=nowyUrl.replaceAll(" ", "_").toLowerCase();
         input.setPhotoUrl(nowyUrl);
         return memepageRepository.save(input);
     }

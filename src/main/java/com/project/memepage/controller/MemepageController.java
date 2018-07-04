@@ -15,6 +15,7 @@ import java.util.Optional;
  * Created by Tomek on 2018-06-28.
  */
 @RestController
+@RequestMapping(value = "/api")
 public class MemepageController {
 
     @Autowired
