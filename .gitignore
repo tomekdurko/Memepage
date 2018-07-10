@@ -43,3 +43,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# folder z memami
+/public/mems
+/src/main/resources/static/mems
