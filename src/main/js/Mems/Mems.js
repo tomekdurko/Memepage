@@ -34,24 +34,28 @@ class Mems extends React.Component {
     return(
       <main>
         <Grid container >
-        <Grid item xs={12} md={6}>
+            <Grid item xs={6} sm={3}>
+            </Grid>
+         <Grid item xs={12} sm={6}>
          {isLoading(this.props.memsStore.isLoading)}
           
-          <GridList cols={1} cellHeight={240} className={classes.gridList} style={{backgroundColor: "#fff", display: (this.props.memsStore.isLoading) ? 'none':''}}>
+          <List className={classes.gridList} style={{backgroundColor: "#fff", display: (this.props.memsStore.isLoading) ? 'none':''}}>
             {this.props.memsStore.mems.map(item => {
                 return (
-                    <GridListTile key="Subheader" cols={1} key={item.photoUrl}>
+                    <ListItem key="Subheader" cols={1} key={item.photoUrl}>
                         <img src={"/mems/"+item.photoUrl+".jpg"} alt={item.photoUrl} />
-                        <GridListTileBar
-                            title={item.name}
-                            subtitle={<span>by: {item.autor}</span>}
+                        <ListItemText
+                            primary={item.name}
+                            secondary={<span>by: {item.autor}</span>}
                         />
-                    </GridListTile>
+                    </ListItem>
                 )   
               }) 
             }
-          </GridList>
+          </List>
           </Grid>
+            <Grid item xs={6} sm={3}>
+            </Grid>
           </Grid>
       </main>
     );
